@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.slider.active {
+    opacity: 1;
+}
+
+.slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 40vh;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: white;
+    color: #556270;
+}
+
+/* Services Section */
+.services {
+    padding: 4rem 2rem;
+    background: #f5f5f5;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Statistics Section */
+.statistics {
+    padding: 4rem 2rem;
+    background: #556270;
+    color: white;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 2rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+}
+
+/* Video Section */
+.video-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.custom-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+}
+
+.accordion-header {
+    background: #f5f5f5;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.accordion-content {
+    padding: 1rem;
+    display: none;
+}
+
+.accordion-content.active {
+    display: block;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 2rem;
+    background: #556270;
+    color: white;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+.submit-btn {
+    background: white;
+    color: #556270;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #f5f5f5;
+}
+
+.radio-group {
+    margin-top: 0.5rem;
+}
+
+.radio-label {
+    display: inline-block;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: auto;
+}
+
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+}
