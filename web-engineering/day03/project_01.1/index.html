@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Ali - Personal Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="slider active" style="background-image: url('images/hero_image_1.jpeg')"></div>
+        <div class="slider" style="background-image: url('images/hero_image_2.png')"></div>
+        <div class="slider" style="background-image: url('images/hero_image_3.png')"></div>
+        <div class="hero-content">
+            <h1>Muhammad Ali</h1>
+            <p>Web Developer & Designer</p>
+            <button class="cta-button">Get in Touch</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>My Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Web Development</h3>
+                <p>Custom websites built with the latest technologies to help your business grow.</p>
+            </div>
+            <div class="service-card">
+                <h3>UI/UX Design</h3>
+                <p>Beautiful and intuitive designs that keep your users engaged.</p>
+            </div>
+            <div class="service-card">
+                <h3>SEO Optimization</h3>
+                <p>Improve your website's visibility and reach more customers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-target="150">0</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">Satisfied Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="10">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="25">0</div>
+                <div class="stat-label">Awards Won</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <h2>Watch Our Story</h2>
+        <div class="video-container">
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                controls
+                class="custom-video"
+            >
+                <source src="videos/2887463-hd_1920_1080_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">What is your development process?</div>
+                <div class="accordion-content">
+                    My development process involves understanding your requirements, creating wireframes, development, testing, and deployment.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">How long does a project typically take?</div>
+                <div class="accordion-content">
+                    Project timelines vary depending on complexity, but most projects take 4-8 weeks from start to finish.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">What technologies do you use?</div>
+                <div class="accordion-content">
+                    I work with HTML, CSS, JavaScript, React, Node.js, and other modern web technologies.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+                <div class="error" id="nameError">Please enter your name</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                <div class="error" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" required>
+                <div class="error" id="phoneError">Please enter a valid phone number</div>
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Contact Method</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="contactMethod" value="email" required>
+                        Email
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="contactMethod" value="phone">
+                        Phone
+                    </label>
+                </div>
+                <div class="error" id="contactMethodError">Please select a contact method</div>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="priority">
+                    Priority Contact (Response within 24 hours)
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" required></textarea>
+                <div class="error" id="messageError">Please enter your message</div>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
