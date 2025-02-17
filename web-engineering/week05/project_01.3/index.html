@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <svg viewBox="0 0 50 50">
+            <circle cx="25" cy="25" r="20" fill="none" stroke="var(--accent)" stroke-width="2" />
+        </svg>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <a href="#" class="logo">JD</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <h1 class="hero-title">Hi, I'm John Doe</h1>
+            <div class="typewriter-container">
+                I am a <span class="typewriter-text"></span>
+            </div>
+            <p>I build exceptional digital experiences.</p>
+        </div>
+        <div class="hero-image">
+            <div class="layer whiteboard"></div>
+            <div class="layer">
+                <div id="human" class="icon human-icon"></div>
+            </div>
+            <div class="layer">
+                <div id="code" class="icon code-icon"></div>
+            </div>
+            <div class="layer">
+                <div id="quality" class="icon quality-icon"></div>
+            </div>
+            <div class="layer">
+                <div id="cloud" class="icon cloud-icon"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Projects will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <!-- Skills will be dynamically inserted here -->
+        </div>
+    </section>
+
+    
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">What is your development process?</div>
+                <div class="accordion-content">
+                    My development process involves understanding your requirements, creating wireframes, development, testing, and deployment.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">How long does a project typically take?</div>
+                <div class="accordion-content">
+                    Project timelines vary depending on complexity, but most projects take 4-8 weeks from start to finish.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">What technologies do you use?</div>
+                <div class="accordion-content">
+                    I work with HTML, CSS, JavaScript, React, Node.js, and other modern web technologies.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+                <div class="error" id="nameError">Please enter your name</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                <div class="error" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" required>
+                <div class="error" id="phoneError">Please enter a valid phone number</div>
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Contact Method</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="contactMethod" value="email" required>
+                        Email
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="contactMethod" value="phone">
+                        Phone
+                    </label>
+                </div>
+                <div class="error" id="contactMethodError">Please select a contact method</div>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="priority">
+                    Priority Contact (Response within 24 hours)
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" required></textarea>
+                <div class="error" id="messageError">Please enter your message</div>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle">☀️</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
