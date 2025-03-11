@@ -1,0 +1,68 @@
+<%- include('./partials/header') %>
+
+<div class="container">
+  <h1>Express EJS MongoDB CRUD App</h1>
+  
+  <!-- Add/Edit Form -->
+  <div class="form-container">
+    <h2><%= editing ? 'Edit Item' : 'Add New Item' %></h2>
+    <% if (editing) { %>
+      <form action="/items/<%= item._id %>?_method=PUT" method="POST">
+    <% } else { %>
+      <form action="/items" method="POST">
+    <% } %>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          value="<%= item.name %>" 
+          required
+        >
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea 
+          id="description" 
+          name="description" 
+          required
+        ><%= item.description %></textarea>
+      </div>
+      <div class="form-buttons">
+        <button type="submit" class="btn <%= editing ? 'btn-update' : 'btn-add' %>">
+          <%= editing ? 'Update Item' : 'Add Item' %>
+        </button>
+        <% if (editing) { %>
+          <a href="/" class="btn btn-cancel">Cancel</a>
+        <% } %>
+      </div>
+    </form>
+  </div>
+  
+  <!-- Items List -->
+  <div class="items-container">
+    <h2>Items</h2>
+    <% if (items.length === 0) { %>
+      <p class="no-items">No items found. Add some items!</p>
+    <% } else { %>
+      <div class="items-list">
+        <% items.forEach(item => { %>
+          <div class="item">
+            <h3><%= item.name %></h3>
+            <p><%= item.description %></p>
+            <p class="item-date">Added: <%= item.createdAt.toLocaleDateString() %></p>
+            <div class="item-actions">
+              <a href="/items/<%= item._id %>" class="btn btn-edit">Edit</a>
+              <form action="/items/<%= item._id %>?_method=DELETE" method="POST" class="delete-form">
+                <button type="submit" class="btn btn-delete">Delete</button>
+              </form>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
