@@ -1,0 +1,9 @@
+name: Demo Services
+services:
+  dummy-go:
+    container_name: dummy-go
+    build:
+      context: ./services/dummy-go
+      dockerfile: Dockerfile
+    ports:
+      - 3069:3069
