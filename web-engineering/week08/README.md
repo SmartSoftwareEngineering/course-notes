@@ -10,8 +10,8 @@ In this project we will just explore multiple aspects of React. For that this pr
 
 # How to run
 
-1- Navigate to [project_3.0](./project_3.0/) folder
-2- Run `npm install`
-3- Run `npm run dev` and open the app in browser using the provided url
-4- Comment/un-comment commponents in [App.jsx](./project_3.0/src/App.jsx) to see the respective component
-5- Play around with respective components in the [component folder](./project_3.0/src/components/)
+1) Navigate to [project_3.0](./project_3.0/) folder
+2) Run `npm install`
+3) Run `npm run dev` and open the app in browser using the provided url
+4) Comment/un-comment commponents in [App.jsx](./project_3.0/src/App.jsx) to see the respective component
+5) Play around with respective components in the [component folder](./project_3.0/src/components/)
