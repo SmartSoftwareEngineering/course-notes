@@ -1,14 +1,16 @@
-const express = require('express')
+const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 mongoose
-  .connect('mongodb+srv://user:password@server.mongodb.net/?retryWrites=true&w=majority&appName=demo')
+  .connect('mongodb+srv://user:pass@server.mongodb.net/?retryWrites=true&w=majority&appName=demo')
   .then(() => console.log("Monngodb Connected"))
   .catch(err => console.log(err))
 
 const Item = require('./models/item');
 
 const app = express()
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
@@ -40,6 +42,7 @@ app.post('/api/v1/items', async function (req, res) {
   try {
     const newItem = new Item({
       name: req.body.name,
+      company: req.body.company,
       description: req.body.description
     });
     savedItem = await newItem.save();
@@ -59,6 +62,7 @@ app.put('/api/v1/items/:id', async (req, res) => {
   try {
     updateditem = await Item.findByIdAndUpdate(req.params.id, {
       name: req.body.name,
+      company: req.body.company,
       description: req.body.description
     });
     res.send(JSON.stringify({
@@ -87,6 +91,6 @@ app.delete('/api/v1/items/:id', async (req, res) => {
 });
 
 
-app.listen(3000, () => {
+app.listen(5000, () => {
   console.log('Server started')
 })
