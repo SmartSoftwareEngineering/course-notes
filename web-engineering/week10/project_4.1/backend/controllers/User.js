@@ -8,7 +8,7 @@ export const signUp = async(req,res,next) =>{
     let existingUser;
 
     try{
-      existingUser = await User.findOne({email})
+      existingUser = await User.findOne({email}, {password: 0})
     }catch(e){
       console.log(err);
     }
@@ -25,7 +25,7 @@ export const signUp = async(req,res,next) =>{
 
     try{
       user.save();
-      return res.status(201).json({ user })
+      return res.status(201).json({user: (({password:_, ...u}) => u)(user._doc)});
     }
     catch(e){
       console.log(e);
@@ -40,7 +40,7 @@ export const logIn = async(req,res,next) => {
     try{
       existingUser = await User.findOne({email})
     }catch(e){
-      console.log(err);
+      console.log(e);
     }
     if(!existingUser){
       return res.status(404).json({message : "User is not found"})
@@ -52,75 +52,5 @@ export const logIn = async(req,res,next) => {
       return res.status(400).json({message: "Incorrect Password!"});
     }
 
-    return res.status(200).json({user: existingUser});
-}
-
-export const getByID = async(req,res,next) =>{
-    const id = req.params.id;
- 
-    let matchedUser;
- 
-    try{
-      matchedUser = await User.findById(id, { password: 0})
-    }catch(e){
-      console.log(e);
-      return res.status(400).json({message: "Could not find the user"})
-    }
-
-
-    if(!matchedUser){
-      return res.status(400).json({message: "The user does not exist"});
-    }
-  
- 
-    try{
-      return res.status(200).json(matchedUser)//((({ password: _ , ...o }) => o)(matchedUser._doc))
-    }
-    catch(e){
-      console.log(e);
-    }
-}
-
-export const updateByID = async(req,res,next) =>{
-    const id = req.params.id;
-    const { name , email , password } = req.body;
- 
-    const hashedPassword = hashSync(password);
-    const updatedUser = {
-      name,
-      email,
-      password: hashedPassword
-    };
-
-    try{
-      await User.findByIdAndUpdate(id, updatedUser)
-    }catch(e){
-      console.log(e);
-      return res.status(400).json({message: "Could not find/update the user"})
-    }  
- 
-    try{
-      return res.status(200).json({message: "User is successfully Updated"})
-    }
-    catch(e){
-      console.log(e);
-    }
-}
-
-export const deleteByID = async(req,res,next) =>{
-    const id = req.params.id;
-
-    try{
-      await User.findByIdAndDelete(id)
-    }catch(e){
-      console.log(e);
-      return res.status(400).json({message: "Could not find/delete the user"})
-    }  
- 
-    try{
-      return res.status(200).json({message: "User is successfully Deleted"})
-    }
-    catch(e){
-      console.log(e);
-    }
+    return res.status(200).json({user: (({password:_, ...user}) => user)(existingUser._doc)});
 }
